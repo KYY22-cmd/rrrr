@@ -4,18 +4,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>buat pacalku @soulatte!</title>
+  <title>for my best friend!</title>
   <link rel="stylesheet" href="do_you_love_me.css" />
   <link rel="icon" href="https://i.ibb.co.com/hXZsYxZ/heart.png">
 </head>
 <body>
 
 <!-- BACKSOUND -->
-<audio autoplay loop>
-  <source src="backsound.mp3.mp3" type="audio/mpeg">
+<audio id="backsound" autoplay loop>
+  <source src="backsound.mp3" type="audio/mpeg">
   Browser kamu tidak mendukung audio.
 </audio>
 
+<script>
+  // Cegah browser memblokir autoplay audio
+  const audio = document.getElementById("backsound");
+
+  // Beberapa browser butuh interaksi user dulu
+  document.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play().catch(err => console.log("Autoplay diblokir:", err));
+    }
+  });
+
+  // Jika autoplay diizinkan, langsung mainkan
+  window.addEventListener("load", () => {
+    audio.play().catch(err => console.log("Autoplay diblokir:", err));
+  });
+</script>
   <!-- TYPING TEXT -->
   <h2 class="typing-text" style="text-align:center; margin-top: 2rem;"></h2>
 
