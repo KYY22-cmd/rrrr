@@ -415,3 +415,18 @@ body {
     border-color: rgb(228, 228, 228);
   }
 }
+.apology-text {
+  font-size: 1.2rem;
+  color: #ff6b81;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-family: "Quicksand", sans-serif;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
