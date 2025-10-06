@@ -10,11 +10,11 @@
 </head>
 <body>
 
-  <!-- BACKSOUND -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+<!-- BACKSOUND -->
+<audio autoplay loop>
+  <source src="backsound.mp3.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
 
   <!-- TYPING TEXT -->
   <h2 class="typing-text" style="text-align:center; margin-top: 2rem;"></h2>
@@ -24,7 +24,7 @@
       <a href="https://tenor.com/view/bubu-dudu-sseeyall-gif-12611896631449379850">Bubu Dudu Sticker</a>
     </div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <h2 class="question">pacalku masih ngambek?</h2>
+    <h2 class="question">my best friend masih ngambek?</h2>
     <div class="button-container">
       <button class="yes-btn btn js-yes-btn">udah enggaa</button>
       <button class="no-btn btn js-no-btn">masih!</button>
@@ -35,9 +35,10 @@
     <div class="tenor-gif-embed" data-postid="21458020" data-share-method="host" data-aspect-ratio="1.06312" data-width="100%">
       <a href="https://tenor.com/view/panda-bear-brown-bear-couple-kiss-kiss-kissing-gif-21458020">Panda Bear Sticker</a>
     </div>
-    <h2>hihi love u pacall</h2>
-    <p class="apology-text">maaf ya selama ini kalo perkataan ku kurang nyaman buat kamu 😢<br>
-  kedepannya aku bakalan lebih baik lagi 🤍</p>
+    <h2>hihi love u ribda cantikkk</h2>
+    <p class="apology-text">maaf ya sayanggg, kadang aku becanda suka kebablasan 😢<br>
+  aku ga ada maksud buat nyinggung kamu atau bikin kamu kesal, kedepannya aku bakalan lebih baik lagi
+  dan ya kamu always cantik sayang kadang aku lupa mau ngomong karena ya aku udah seneng banget gitu ketemu kamu ngeliat kamu maaf yaa cintakuu 🤍</p>
   </div>
 
   <!-- Heart Loader -->
@@ -83,16 +84,25 @@
 
   <!-- TEKS NGETIK -->
   <script>
-    const typingText = document.querySelector(".typing-text");
-    const message = "I'm sorry... I love you... 🥺❤️";
-    let idx = 0;
-    function typeChar() {
-      if (idx < message.length) {
-        typingText.innerHTML += message[idx++];
-        setTimeout(typeChar, 100);
-      }
+  const typingText = document.querySelector(".typing-text");
+  const message = "I'm sorry... I love you... 🥺❤️";
+  let idx = 0;
+
+  function typeChar() {
+    if (idx < message.length) {
+      typingText.innerHTML += message[idx++];
+      setTimeout(typeChar, 100);
+    } else {
+      // setelah selesai ngetik, tunggu 2 detik lalu hilang perlahan
+      setTimeout(() => {
+        typingText.style.transition = "opacity 1s ease";
+        typingText.style.opacity = "0";
+        setTimeout(() => typingText.remove(), 1000);
+      }, 2000);
     }
-    typeChar();
-  </script>
+  }
+
+  typeChar();
+</script>
 </body>
 </html>
